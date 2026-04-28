@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+*.apk
+*.aab
+*.keystore
+*.so
+
+# iOS
+ios/Pods/
+ios/build/
+*.xcworkspace
+xcuserdata/
+
+# General
+.DS_Store
+*.log

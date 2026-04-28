@@ -1,0 +1,3 @@
+Para la pantalla de ventas se agregara en el header el porcentaje de ventas acompanado de un label que dira si esta bien o mal
+
+en el body se agregaran las mejores ventas filtrado por dia, mes o acompanado

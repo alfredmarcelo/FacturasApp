@@ -1,0 +1,488 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "rnasyncstorage_autolinked_build",
+					"jsonFile" : "directory-rnasyncstorage_autolinked_build-Debug-2aecae351dcf57f203a5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "RNDateTimePickerCGen_autolinked_build",
+					"jsonFile" : "directory-RNDateTimePickerCGen_autolinked_build-Debug-1a28f209e30be3ab71d2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-community/datetimepicker/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "VectorIconsAntDesign_autolinked_build",
+					"jsonFile" : "directory-VectorIconsAntDesign_autolinked_build-Debug-a7335c0af98102fb02b5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/ant-design/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "VectorIconsEvilIcons_autolinked_build",
+					"jsonFile" : "directory-VectorIconsEvilIcons_autolinked_build-Debug-56ad331dbae6fc354700.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/evil-icons/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "VectorIconsFeather_autolinked_build",
+					"jsonFile" : "directory-VectorIconsFeather_autolinked_build-Debug-af9abf64a98126536adf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/feather/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "VectorIconsFontAwesome_autolinked_build",
+					"jsonFile" : "directory-VectorIconsFontAwesome_autolinked_build-Debug-cc907f78521890e3e9a2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/fontawesome/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "VectorIconsIonicons_autolinked_build",
+					"jsonFile" : "directory-VectorIconsIonicons_autolinked_build-Debug-e5f31339afc9ff71979f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/ionicons/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "VectorIconsLucide_autolinked_build",
+					"jsonFile" : "directory-VectorIconsLucide_autolinked_build-Debug-506fe6b487a64e4f300d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/lucide/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "VectorIconsMaterialDesignIcons_autolinked_build",
+					"jsonFile" : "directory-VectorIconsMaterialDesignIcons_autolinked_build-Debug-5621d5cdb9f4e66ad3c2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/material-design-icons/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "VectorIconsMaterialIcons_autolinked_build",
+					"jsonFile" : "directory-VectorIconsMaterialIcons_autolinked_build-Debug-35eb408e3338cafae7b3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/material-icons/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "RNImagePickerSpec_autolinked_build",
+					"jsonFile" : "directory-RNImagePickerSpec_autolinked_build-Debug-85657728123732a43e11.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "rnreanimated_autolinked_build",
+					"jsonFile" : "directory-rnreanimated_autolinked_build-Debug-06e328c2706052bbd2fe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "safeareacontext_autolinked_build",
+					"jsonFile" : "directory-safeareacontext_autolinked_build-Debug-e3414d4b0cf8a9e56dbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-safe-area-context/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "rnscreens_autolinked_build",
+					"jsonFile" : "directory-rnscreens_autolinked_build-Debug-ac13fbaa77bc2881d3e7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-screens/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "rnsvg_autolinked_build",
+					"jsonFile" : "directory-rnsvg_autolinked_build-Debug-23ae389b477217f138e7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-svg/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "RNVectorIconsSpec_autolinked_build",
+					"jsonFile" : "directory-RNVectorIconsSpec_autolinked_build-Debug-a43a7a743a1d31157fe5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "rnworklets_autolinked_build",
+					"jsonFile" : "directory-rnworklets_autolinked_build-Debug-c6f542febba36e099ad6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native-worklets/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"name" : "appmodules",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "appmodules::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmodules-Debug-ed291d34a4e3bc7c0b65.json",
+					"name" : "appmodules",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "react_codegen_RNDateTimePickerCGen::@59b70ddc31ba2f8ef1d2",
+					"jsonFile" : "target-react_codegen_RNDateTimePickerCGen-Debug-8a3fc8b543c0aa21d44b.json",
+					"name" : "react_codegen_RNDateTimePickerCGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "react_codegen_RNImagePickerSpec::@f66ee9a2efecfb28bee4",
+					"jsonFile" : "target-react_codegen_RNImagePickerSpec-Debug-af5b818649c69f600186.json",
+					"name" : "react_codegen_RNImagePickerSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "react_codegen_RNVectorIconsSpec::@479809fae146501fd34d",
+					"jsonFile" : "target-react_codegen_RNVectorIconsSpec-Debug-2c5941ec2c2ab056aeb9.json",
+					"name" : "react_codegen_RNVectorIconsSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "react_codegen_VectorIconsAntDesign::@14ab999fbc2fb062569b",
+					"jsonFile" : "target-react_codegen_VectorIconsAntDesign-Debug-eedabe543d00fdfc5050.json",
+					"name" : "react_codegen_VectorIconsAntDesign",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "react_codegen_VectorIconsEvilIcons::@cd02e201fea1713bb7cb",
+					"jsonFile" : "target-react_codegen_VectorIconsEvilIcons-Debug-e9e13e5e04cd78d34227.json",
+					"name" : "react_codegen_VectorIconsEvilIcons",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "react_codegen_VectorIconsFeather::@fcfec79c12c33c7dd368",
+					"jsonFile" : "target-react_codegen_VectorIconsFeather-Debug-0373b73e7a3e15a3990f.json",
+					"name" : "react_codegen_VectorIconsFeather",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "react_codegen_VectorIconsFontAwesome::@f56ae3024d8db5b6b904",
+					"jsonFile" : "target-react_codegen_VectorIconsFontAwesome-Debug-de8dc7ad9ca41b6a6f96.json",
+					"name" : "react_codegen_VectorIconsFontAwesome",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "react_codegen_VectorIconsIonicons::@d19b6b0a3fec254dc7d5",
+					"jsonFile" : "target-react_codegen_VectorIconsIonicons-Debug-841760c6e0c8f0134a38.json",
+					"name" : "react_codegen_VectorIconsIonicons",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "react_codegen_VectorIconsLucide::@3a047b4a91b60d2a1b9e",
+					"jsonFile" : "target-react_codegen_VectorIconsLucide-Debug-c328e0e64f3c8a9ee748.json",
+					"name" : "react_codegen_VectorIconsLucide",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "react_codegen_VectorIconsMaterialDesignIcons::@ec6cd781043477cf3896",
+					"jsonFile" : "target-react_codegen_VectorIconsMaterialDesignIcons-Debug-4e06a0b2011c513d98f6.json",
+					"name" : "react_codegen_VectorIconsMaterialDesignIcons",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "react_codegen_VectorIconsMaterialIcons::@31616434fa1e3b43792c",
+					"jsonFile" : "target-react_codegen_VectorIconsMaterialIcons-Debug-d4798566bda11410aa7e.json",
+					"name" : "react_codegen_VectorIconsMaterialIcons",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "react_codegen_rnasyncstorage::@1596841e19ec5b9eeffe",
+					"jsonFile" : "target-react_codegen_rnasyncstorage-Debug-c35c7e91252ff5b845f0.json",
+					"name" : "react_codegen_rnasyncstorage",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "react_codegen_rnreanimated::@8afabad14bfffa3f8b9a",
+					"jsonFile" : "target-react_codegen_rnreanimated-Debug-b232c394628f9e62c179.json",
+					"name" : "react_codegen_rnreanimated",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-4d26920e6578b6d5a46c.json",
+					"name" : "react_codegen_rnscreens",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "react_codegen_rnsvg::@4f40eb209d0c0b4a3b65",
+					"jsonFile" : "target-react_codegen_rnsvg-Debug-2c5e54421d53b59b985a.json",
+					"name" : "react_codegen_rnsvg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "react_codegen_rnworklets::@68f58d84d4754f193387",
+					"jsonFile" : "target-react_codegen_rnworklets-Debug-15335a85de1335642133.json",
+					"name" : "react_codegen_rnworklets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-d944c1a5060380a2fd79.json",
+					"name" : "react_codegen_safeareacontext",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/android/app/.cxx/Debug/w4i4w314/armeabi-v7a",
+		"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

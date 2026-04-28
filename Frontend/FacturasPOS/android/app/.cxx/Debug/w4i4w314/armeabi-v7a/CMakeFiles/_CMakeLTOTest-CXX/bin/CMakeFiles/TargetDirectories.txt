@@ -1,0 +1,4 @@
+/home/alfred/FacturasApp/Frontend/FacturasPOS/android/app/.cxx/Debug/w4i4w314/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+/home/alfred/FacturasApp/Frontend/FacturasPOS/android/app/.cxx/Debug/w4i4w314/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+/home/alfred/FacturasApp/Frontend/FacturasPOS/android/app/.cxx/Debug/w4i4w314/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+/home/alfred/FacturasApp/Frontend/FacturasPOS/android/app/.cxx/Debug/w4i4w314/armeabi-v7a/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir

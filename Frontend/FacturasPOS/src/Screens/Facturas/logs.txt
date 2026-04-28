@@ -1,0 +1,8 @@
+Hacer que cuando un usuaio presione el boton de plus al ya haber creado una factura, en la pantalla de facturas se le indique
+que la factura no se le envio al cliente, de lo contrario se le indique que la factura se le envio al cliente.
+
+la indiciacion de enviado y no enviado seran botones, cuando diga enviado al presionar dira cuando fue, al presionar no enviado
+se le preguntara al cliente si quiere enviarlo.
+
+la pantalla de factura ya creada tendra botones que le digan si desea mandar la factura por whatsapp, IG, correo, o si quiere copiar un link hacia
+una url con la factura donde el cliente podra descargarla

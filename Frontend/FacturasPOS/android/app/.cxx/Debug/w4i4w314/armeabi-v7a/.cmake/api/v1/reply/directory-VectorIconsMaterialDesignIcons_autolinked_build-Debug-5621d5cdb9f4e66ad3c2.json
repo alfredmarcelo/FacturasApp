@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "VectorIconsMaterialDesignIcons_autolinked_build",
+		"source" : "/home/alfred/FacturasApp/Frontend/FacturasPOS/node_modules/@react-native-vector-icons/material-design-icons/android/build/generated/source/codegen/jni"
+	}
+}
