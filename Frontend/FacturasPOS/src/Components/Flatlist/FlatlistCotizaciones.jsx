@@ -21,6 +21,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function FlatlistCotizaciones({ nombre, setData }) {
 
     const [datacotizaciones, setDatacotizaciones] = useState([]);
+    const [selectedCotizacion, setSelectedCotizacion] = useState(null);
+
     const obtenercotizaciones = async () => {
         try {
             const token = await AsyncStorage.getItem('token');
@@ -52,8 +54,11 @@ export default function FlatlistCotizaciones({ nombre, setData }) {
 
     useEffect(() => {
         obtenercotizaciones();
+    }, []);
+
+    useEffect(() => {
         setData([pagadas, pendientes, vencidas, anuladas]);
-    }, [2]);
+    }, [datacotizaciones, setData]);
 
     const getStatusStyle = (estado) => {
         switch (estado.toLowerCase()) {
@@ -67,15 +72,80 @@ export default function FlatlistCotizaciones({ nombre, setData }) {
     const NohayFacturas = () => {
         return (
             <View style={styles.noHayFacturas}>
-                <Texts>No hay facturas</Texts>
+                <Texts>No hay cotizaciones</Texts>
             </View>
         );
     };
 
+    const deleteCotizacion = async () => {
+        if (!selectedCotizacion) {
+            Alert.alert('Aviso', 'Selecciona una cotización primero (mantén presionado)');
+            return;
+        }
+
+        Alert.alert(
+            'Confirmar eliminación',
+            `¿Estás seguro de eliminar la cotización #${selectedCotizacion.id}?`,
+            [
+                { text: 'Cancelar', style: 'cancel' },
+                {
+                    text: 'Eliminar',
+                    style: 'destructive',
+                    onPress: async () => {
+                        try {
+                            const token = await AsyncStorage.getItem('token');
+                            const res = await fetch(`http://192.168.8.106:8000/auth/EliminarCotizacion/${selectedCotizacion.id}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`,
+                                },
+                            });
+
+                            if (res.ok) {
+                                // Eliminar del estado local
+                                setDatacotizaciones(prev => prev.filter(c => c.id !== selectedCotizacion.id));
+                                setSelectedCotizacion(null);
+                                Alert.alert('Éxito', 'Cotización eliminada correctamente');
+                            } else {
+                                Alert.alert('Error', 'No se pudo eliminar la cotización');
+                            }
+                        } catch (error) {
+                            console.log(error);
+                            Alert.alert('Error', 'Error de conexión');
+                        }
+                    },
+                },
+            ]
+        );
+    };
+
+    const handleLongPress = (item) => {
+        setSelectedCotizacion(item);
+    };
+
+    const handlePress = () => {
+        setSelectedCotizacion(null);
+    };
+
+    const formatearMoneda = (valor) => {
+        const numero = Number(valor) || 0;
+        return numero.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+    };
+
     const renderItem = ({ item }) => (
         <TouchableOpacity
-            style={[styles.card, { borderLeftColor: getStatusStyle(item.estado).backgroundColor }]}
-            onPress={() => Alert.alert('Detalle Factura', `Abriendo Factura #${item.id} - NCF: ${item.ncf}`)}
+            style={[
+                styles.card,
+                { borderLeftColor: getStatusStyle(item.estado).backgroundColor },
+                selectedCotizacion?.id === item.id && { borderWidth: 2, borderColor: '#e53935', backgroundColor: '#fff5f5' }
+            ]}
+            onLongPress={() => handleLongPress(item)}
+            onPress={handlePress}
+            delayLongPress={300}
         >
             {/* Columna Izquierda: Cliente, ID, Vendedor */}
             <View style={styles.cardLeft}>
@@ -91,7 +161,7 @@ export default function FlatlistCotizaciones({ nombre, setData }) {
 
                 {/* Bloque Financiero y Fecha */}
                 <View style={styles.financialBlock}>
-                    <Texts style={styles.totalText}>RD$ {item.total}</Texts>
+                    <Texts style={styles.totalText}>RD$ {formatearMoneda(item.total)}</Texts>
                     <Texts style={styles.dateText}>{item.fecha}</Texts>
                 </View>
 
@@ -101,11 +171,19 @@ export default function FlatlistCotizaciones({ nombre, setData }) {
                         <Texts style={styles.statusText}>{item.estado.toUpperCase()}</Texts>
                     </View>
 
+                    <TouchableOpacity
+                        style={[styles.actionButton, { backgroundColor: '#007bff' }]}
+                        onPress={() => Alert.alert('Enviar', `Enviar cotización #${item.id}`)}
+                    >
+                        <Texts style={styles.actionButtonText}>ENVIAR</Texts>
+                        <Feather name="send" size={wp("3.5%")} color="white" />
+                    </TouchableOpacity>
+
                     {/* Botón de Acción Rápida (Abonar/Ver) */}
                     {item.estado.toLowerCase() === 'pendiente' && (
                         <TouchableOpacity
                             style={styles.actionButton}
-                            onPress={() => Alert.alert('Pago', `Registrar abono de RD$ ${item.pendiente}`)}
+                            onPress={() => Alert.alert('Pago', `Registrar abono de RD$ ${formatearMoneda(item.pendiente)}`)}
                         >
                             <Texts style={styles.actionButtonText}>PAGAR</Texts>
                             <MaterialIcons name="payment" size={wp("4%")} color="white" />
@@ -121,11 +199,8 @@ export default function FlatlistCotizaciones({ nombre, setData }) {
             {/* ... HEADER (Se deja el header como estaba, pero se adapta el nombre) ... */}
             <View style={styles.headerContainer}>
                 <View style={styles.headerLeft}>
-                    <TouchableOpacity style={styles.headerbutton}>
-                        <MaterialIcons name="delete-outline" size={wp("6%")} color="#555" />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.headerbutton}>
-                        <Feather name="send" size={wp("5.2%")} color="#555" />
+                    <TouchableOpacity style={styles.headerbutton} onPress={deleteCotizacion}>
+                        <MaterialIcons name="delete-outline" size={wp("6%")} color={selectedCotizacion ? "#e53935" : "#555"} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.headerbutton}>
                         <MaterialIcons name="search" size={wp("6%")} color="#000000ff" />
@@ -167,7 +242,8 @@ const styles = StyleSheet.create({
     headerLeft: {
         width: wp("45%"),
         flexDirection: "row",
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
+        paddingLeft: wp("5%"),
         alignItems: "center",
         gap: wp("2%"),
     },

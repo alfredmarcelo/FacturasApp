@@ -151,3 +151,29 @@ async def ObtenerCotizaciones(
             for c in obtener
         ]
     }
+
+# -----------------------------
+#   RUTA: ELIMINAR COTIZACIÓN
+# -----------------------------
+
+@route.delete('/EliminarCotizacion/{cotizacion_id}')
+async def EliminarCotizacion(
+    cotizacion_id: int,
+    authorization: str = Header(None),
+    db: Session = Depends(get_db)
+):
+    token = authorization.split(' ')[1]
+    admin_id = obtener_admin_id(token, db)
+
+    cotizacion_encontrada = db.query(cotizaciones).filter(
+        cotizaciones.id == cotizacion_id,
+        cotizaciones.ad_id == admin_id
+    ).first()
+
+    if not cotizacion_encontrada:
+        raise HTTPException(status_code=404, detail="Cotización no encontrada")
+
+    db.delete(cotizacion_encontrada)
+    db.commit()
+
+    return {"mensaje": "Cotización eliminada correctamente"}

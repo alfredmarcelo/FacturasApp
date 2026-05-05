@@ -113,8 +113,16 @@ export default function FlatlistFacturas({ nombre, data }) {
     const fecha = new Date(fechaString);
     return fecha.toLocaleDateString('es-DO', {
       year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
+      month: 'short',
+      day: 'numeric',
+    });
+  };
+
+  const formatearMoneda = (valor) => {
+    const numero = Number(valor) || 0;
+    return numero.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     });
   };
 
@@ -144,7 +152,7 @@ export default function FlatlistFacturas({ nombre, data }) {
       {/* -------- LISTA -------- */}
       <FlatList
         data={facturas}
-        style={{ width: wp("100%"), marginBottom: 10 }}
+        style={{ width: wp("100%"), marginBottom: 13 }}
         contentContainerStyle={{ justifyContent: "center", backgroundColor: "#ebe7e7ff", alignItems: "center" }}
         keyExtractor={item => item.id.toString()}
         ListEmptyComponent={NohayFacturas}
@@ -158,23 +166,35 @@ export default function FlatlistFacturas({ nombre, data }) {
             onPress={handlePress}
             delayLongPress={300}
           >
-
-            <View style={styles.cardID}>
-              <Texts>{item.id}</Texts>
+            <View style={styles.cardHeader}>
+              <View style={styles.cardID}>
+                <Texts style={{ fontSize: wp("4%"), color: "white", fontWeight: "bold" }}>{item.id}</Texts>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: wp("1.5%") }}>
+                <Feather name="calendar" size={wp("4%")} color="black" />
+                <Texts style={{ fontSize: wp("3.5%"), fontWeight: "500", color: "#444" }}>{formatearFecha(item.fecha)}</Texts>
+              </View>
+              <View style={styles.cardNCF}>
+                <Texts style={{ fontSize: wp("4%"), color: "white", fontWeight: "bold" }}>{item.ncf}</Texts>
+              </View>
             </View>
+            <View style={styles.cardBlockContainer}>
+              <View style={styles.cardBlock}>
+                <View style={{ alignItems: "center" }}>
+                  <Texts style={{ fontSize: wp("4%"), color: "black" }}>ITBIS</Texts>
+                  <Texts style={{ fontSize: wp("4%"), color: "#635f5fff" }}>{formatearMoneda(item.itbis)}</Texts>
+                </View>
+                <View style={{ alignItems: "center" }}>
+                  <Texts style={{ fontSize: wp("4%"), color: "black" }}>Subtotal</Texts>
+                  <Texts style={{ fontSize: wp("4%"), color: "#635f5fff" }}>{formatearMoneda(item.subtotal)}</Texts>
+                </View>
+              </View>
 
-            <View style={styles.cardBlock}>
-              <Texts>NCF: {item.ncf}</Texts>
-              <Texts>Fecha: {formatearFecha(item.fecha)}</Texts>
+              <View style={styles.cardRight}>
+                <Texts style={{ fontSize: wp("4%"), color: "grey", top: hp("0.2%") }}>RD$</Texts>
+                <Texts style={{ fontSize: wp("6%"), color: "#2c2c2cff", fontWeight: "300", top: hp("0.5%") }}>{formatearMoneda(item.total)}</Texts>
+              </View>
             </View>
-
-            <View style={styles.cardBlock}>
-              <Texts>ITBIS: {item.itbis}</Texts>
-              <Texts>Total: {item.total}</Texts>
-            </View>
-
-            <View style={styles.cardRight} />
-
           </TouchableOpacity>
         )}
       />
@@ -191,6 +211,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: wp("2%"),
     borderTopLeftRadius: wp("2%"),
     backgroundColor: '#e2e2e2ff',
+    paddingBottom: hp("2%"),
   },
 
   noHayFacturas: {
@@ -204,7 +225,7 @@ const styles = StyleSheet.create({
 
   headerContainer: {
     width: wp("100%"),
-    height: hp("7%"),
+    height: hp("6.5%"),
     backgroundColor: "#ebe7e7ff",
     alignItems: "center",
     flexDirection: "row",
@@ -215,7 +236,8 @@ const styles = StyleSheet.create({
     width: wp("50%"),
     height: "100%",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    paddingLeft: wp("5%"),
     alignItems: "center",
     gap: wp("4%"),
     borderTopWidth: 1,
@@ -227,7 +249,7 @@ const styles = StyleSheet.create({
     width: wp("50%"),
     height: "100%",
     backgroundColor: "white",
-    borderBottomRightRadius: wp("10%"),
+    borderBottomRightRadius: wp("5%"),
     justifyContent: "center",
     alignItems: "center",
   },
@@ -244,18 +266,38 @@ const styles = StyleSheet.create({
 
   /* ---------------- CARDS ---------------- */
 
+  cardHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  cardBlockContainer: {
+    width: wp("95%"),
+    height: hp("7%"),
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+
   card: {
     backgroundColor: "#ffffffff",
     height: hp("12%"),
     width: wp("95%"),
     borderRadius: wp("3%"),
-    justifyContent: "center",
-    alignItems: "center",
     marginTop: hp("1.5%"),
-    flexDirection: "row",
+    flexDirection: "column",
     elevation: 3,
     borderWidth: 0.1,
     borderColor: "#e2e2e29d",
+  },
+
+  cardNCF: {
+    width: wp("40%"),
+    borderTopRightRadius: wp("3%"),
+    borderBottomStartRadius: wp("6%"),
+    height: hp("4%"),
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#1dbe18cc",
   },
 
   cardSelected: {
@@ -265,26 +307,32 @@ const styles = StyleSheet.create({
   },
 
   cardID: {
-    width: wp("15%"),
+    width: wp("10%"),
+    borderTopLeftRadius: wp("3%"),
+    borderBottomEndRadius: wp("6%"),
+    height: hp("4.5%"),
     justifyContent: "center",
     alignItems: "center",
-    borderTopLeftRadius: wp("3%"),
-    borderBottomLeftRadius: wp("3%"),
-    height: "100%",
-    backgroundColor: "white",
+    backgroundColor: "#0f7f0cff",
   },
 
   cardBlock: {
-    width: wp("30%"),
+    width: wp("50%"),
+    height: hp("7%"),
     justifyContent: "center",
-    alignItems: "flex-start",
-    paddingLeft: wp("5%"),
-    gap: hp("1%"),
+    alignItems: "center",
+    gap: hp("3%"),
+    paddingRight: wp("6%"),
+    right: wp("1%"),
+    flexDirection: "row",
   },
 
   cardRight: {
-    width: wp("20%"),
+    width: wp("30%"),
     justifyContent: "center",
     alignItems: "center",
+    height: hp("7%"),
+    flexDirection: "row",
+    gap: wp("1%"),
   },
 });

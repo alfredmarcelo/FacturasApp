@@ -1,8 +1,7 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 import Texts from '../NativeComponents/Text';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useEffect } from 'react';
 
 // IMPORTANTE: responsive
 import { widthPercentageToDP as wp, heightPercentageToDP as hp }
@@ -15,8 +14,11 @@ export default function ClienteCard({
   cliente,
   cambiar
 }) {
+  const nombreMostrar = cambiar?.nombre || DatosCliente?.nombre || 'Factura no formal';
+  const cedulaMostrar = cambiar?.cedula_rnc || DatosCliente?.cedula_rnc || 'Factura no formal';
+
   useEffect(() => {
-    cliente({ id: cambiar?.id || DatosCliente?.id || 'Factura no formal', nombre: cambiar?.nombre || DatosCliente?.nombre || 'Factura no formal', cedula_rnc: cambiar?.cedula_rnc || DatosCliente?.cedula_rnc || 'Factura no formal' })
+    cliente({ id: cambiar?.id || DatosCliente?.id || 'Factura no formal', nombre: nombreMostrar, cedula_rnc: cedulaMostrar })
   }, []);
 
   return (
@@ -39,10 +41,9 @@ export default function ClienteCard({
         {/* Avatar */}
         <View style={style.AvatarContainer}>
           <View style={style.AvatarCircle}>
-            <MaterialCommunityIcons
-              name="account"
-              size={wp('9%')}
-              color="#ccc"
+            <Image
+              source={{ uri: `https://api.dicebear.com/9.x/thumbs/png?seed=${encodeURIComponent(nombreMostrar)}&radius=0` }}
+              style={{ width: wp('16%'), height: wp('16%'), borderRadius: wp('8%') }}
             />
           </View>
         </View>
@@ -50,9 +51,9 @@ export default function ClienteCard({
         {/* Text Info */}
         <View style={style.InfoContainer}>
           <Texts style={style.NameText} numberOfLines={1}>
-            {cambiar?.nombre || DatosCliente?.nombre || 'Factura no formal'}
+            {nombreMostrar}
           </Texts>
-          <Texts style={style.RNCText}>{cambiar?.cedula_rnc || DatosCliente?.cedula_rnc || 'Factura no formal'}</Texts>
+          <Texts style={style.RNCText}>{cedulaMostrar}</Texts>
         </View>
       </View>
     </View>

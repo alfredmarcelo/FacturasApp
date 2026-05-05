@@ -1,4 +1,4 @@
-import { View, FlatList, TouchableOpacity } from 'react-native';
+import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Texts from '../NativeComponents/Text';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -96,7 +96,12 @@ export default function Clientes({ setDatosCliente, DatosCliente, filteredData }
                 },
               ]}
             >
-              <View style={avatarStyle} />
+              <View style={avatarStyle}>
+                <Image
+                  source={{ uri: `https://api.dicebear.com/9.x/thumbs/png?seed=${encodeURIComponent(item.nombre)}&radius=0` }}
+                  style={{ width: wp("12%"), height: wp("12%"), borderRadius: wp("50%") }}
+                />
+              </View>
               <Texts style={nameStyle}>{item.nombre}</Texts>
               <Texts style={rncStyle}>{item.cedula_rnc}</Texts>
             </TouchableOpacity>
